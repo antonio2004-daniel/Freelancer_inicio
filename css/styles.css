@@ -1,0 +1,84 @@
+/*siempre vamos a definir una paleta de colores*/
+:root {/*seudoelemntos-no existen y solo almacenan variables de css*/
+    --blanco:#FFFFFF;
+    --negro:#212121;
+    --primario:#FFC107;/*El que más se va a utilizar*/
+    /*--primario: rgba(255 , 193 , 7 , 1;)*/
+    --secundario: #0097A7;
+    --gris: #757575;
+
+    --fuente-principal: 3.8rem;
+}
+
+
+
+html{
+    font-size: 62.5%;
+}
+
+body{/*este codigo se aplica en todo el documento*/
+    font-size: 16px;/*1 rem=10px*/
+    font-family: "Krub", sans-serif;/*Para saber más podemos utilizar google fonts */
+}
+
+/*No podemos inicar una clase con numeros */
+.titulo { /*Es recomendable utilizar simpre clases porque son reutilizables*/
+    text-align: center;
+    font-size: var(--fuente-principal);
+    /*color: var(--primario);*/
+}
+
+/*Selectores:h1 span aplica solo a span de h1 y span lo aplica a todos los span
+Tenemos selectores de elemtos(elemento)
+de clase(.clase)
+de id, no se repite el mismo id por documento, solo hay uno(#id)
+de atributo([atributo])
+
+Combinacion de descendientes (.clasepadre .clasehijo) primero busca el padre y luego el hijo
+o (.cliente >p) aplica a todos los aprrafos hijos
+
+*/
+.titulo span{
+    font-size: 2rem; /*En la actualidad ya no se ocupa px, es mejor rem , px se ocupaba caundo eran del mismo tamaño,rem es relativo al documento y toma como referencia el tamaño del documento y también esta (em,px)*/
+    /*se sugiere utilizar una calculadora px-rem-pero no cuando es largo pero hack(tml font-size:62.5 1rem=10px)*/
+   /* color: blue;*/
+}
+
+
+/*especificidad- entre más especifico más prioridad*/
+/*para mejor prioridad se pone !important*/
+/*h1.titulo span{
+    font-size: 2rem;/* En la actualidad ya no se ocupa px, es mejor rem , px se ocupaba caundo eran del mismo tamaño,rem es relativo al documento y toma como referencia el tamaño del documento y también esta (em,px)
+    se sugiere utilizar una calculadora px-rem-pero no cuando es largo pero hack(tml font-size:62.5 1rem=10px)
+    color: red;
+}*/
+/*span{
+    color: green !important;
+}*/
+.contenedor{
+    width: 120rem;  
+   /* margin-top:0rem;/*En que posicion se va a encontrar un elemto  
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+    margin:0 auto  ;/*en sentido horario*/
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    background-color: var(--secundario);
+    display: flex;/*Habilita flexbox/*/
+    flex-direction: row;/*No es necesario en esta pagina*/
+    align-items: center;/*No es necesario*/
+    justify-content: space-between;/*hay around e evenly*/
+    /*row es por default en flexbox también hay column , column reverse y row reverse */
+
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration:none ;/*Para quitar lineas de abajo, se puede subrayar o más cosas*/
+
+}
+/*Display:block significa que el elemnto se colocara uno debajo del otro sin importar su tamaño ocontenido 
+Dysplay:inline significa que el elmento se posicionará a la derecha una vez que haya tomado el espacio que requiere*/
